@@ -118,6 +118,27 @@ public static class DebugTools
         private Component _selectedComponent;
 
         private readonly Dictionary<string, string> _buffers = new Dictionary<string, string>(1024);
+        private class ChangeRecord
+        {
+            public Component Component;
+            public bool IsField;
+            public IntPtr Member;
+            public bool IsStatic;
+            public FieldKind Kind;
+            public string OriginalValue;
+        }
+        private class FreezeRecord
+        {
+            public Component Component;
+            public bool IsField;
+            public IntPtr Member;
+            public bool IsStatic;
+            public FieldKind Kind;
+            public string Value;
+        }
+
+        private readonly Dictionary<string, ChangeRecord> _changes = new Dictionary<string, ChangeRecord>(128);
+        private readonly Dictionary<string, FreezeRecord> _frozen = new Dictionary<string, FreezeRecord>(128);
 
         private static readonly HashSet<string> BODY_PARTS =
             new HashSet<string>(StringComparer.OrdinalIgnoreCase)
@@ -151,6 +172,13 @@ public static class DebugTools
                 // (removed) Input.ResetInputAxes(); // avoid nuking input every frame
 
             }
+        }
+
+        private void LateUpdate()
+        {
+            if (_visible)
+                Time.timeScale = 0f;
+            ApplyFrozenValues();
         }
 
         private void SetMenuVisible(bool vis)
@@ -211,6 +239,8 @@ public static class DebugTools
                 if (GUILayout.Button("‹ Back", GUILayout.Width(90))) _root = RootPane.Home;
             }
             GUILayout.FlexibleSpace();
+            if (_changes.Count > 0 && GUILayout.Button("Revert Changes", GUILayout.Width(140)))
+                RevertAllChanges();
             if (GUILayout.Button("Close (Esc)", GUILayout.Width(120))) SetMenuVisible(false);
             GUILayout.EndHorizontal();
             GUILayout.EndArea();
@@ -414,8 +444,22 @@ public static class DebugTools
                         bool newVal = GUILayout.Toggle(parsed, "value", GUILayout.Width(80));
                         if (newVal != parsed)
                         {
+                            if (!_changes.ContainsKey(key))
+                                _changes[key] = new ChangeRecord { Component = _selectedComponent, IsField = true, Member = field, IsStatic = isStatic, Kind = FieldKind.Bool, OriginalValue = curVal ?? "false" };
                             if (ApplyBoolField(obj.Pointer, field, isStatic, newVal))
+                            {
                                 _buffers[key] = newVal ? "true" : "false";
+                                MelonLogger.Msg($"[DebugTools] Set {typeName}.{fieldName} = {_buffers[key]} (was {curVal})");
+                            }
+                        }
+                        bool frozen = _frozen.ContainsKey(key);
+                        bool newFrozen = GUILayout.Toggle(frozen, "Freeze", GUILayout.Width(70));
+                        if (newFrozen != frozen)
+                        {
+                            if (newFrozen)
+                                _frozen[key] = new FreezeRecord { Component = _selectedComponent, IsField = true, Member = field, IsStatic = isStatic, Kind = FieldKind.Bool, Value = _buffers[key] };
+                            else
+                                _frozen.Remove(key);
                         }
                     }
                     else if (kind == FieldKind.Int || kind == FieldKind.Float || kind == FieldKind.String)
@@ -428,7 +472,22 @@ public static class DebugTools
                             if (kind == FieldKind.Int) ok = ApplyIntField(obj.Pointer, field, isStatic, TryParseInt(buf, curVal));
                             else if (kind == FieldKind.Float) ok = ApplyFloatField(obj.Pointer, field, isStatic, TryParseFloat(buf, curVal));
                             else if (kind == FieldKind.String) ok = ApplyStringField(obj.Pointer, field, isStatic, buf ?? "");
-                            if (ok) _buffers[key] = SafeGetFieldValueStringTyped(obj.Pointer, field, isStatic, ftype) ?? buf;
+                            if (ok)
+                            {
+                                if (!_changes.ContainsKey(key))
+                                    _changes[key] = new ChangeRecord { Component = _selectedComponent, IsField = true, Member = field, IsStatic = isStatic, Kind = kind, OriginalValue = curVal ?? "" };
+                                _buffers[key] = SafeGetFieldValueStringTyped(obj.Pointer, field, isStatic, ftype) ?? buf;
+                                MelonLogger.Msg($"[DebugTools] Set {typeName}.{fieldName} = {_buffers[key]} (was {curVal})");
+                            }
+                        }
+                        bool frozen = _frozen.ContainsKey(key);
+                        bool newFrozen = GUILayout.Toggle(frozen, "Freeze", GUILayout.Width(70));
+                        if (newFrozen != frozen)
+                        {
+                            if (newFrozen)
+                                _frozen[key] = new FreezeRecord { Component = _selectedComponent, IsField = true, Member = field, IsStatic = isStatic, Kind = kind, Value = _buffers[key] };
+                            else
+                                _frozen.Remove(key);
                         }
                     }
                     else
@@ -475,11 +534,25 @@ public static class DebugTools
                         bool newVal = GUILayout.Toggle(parsed, "value", GUILayout.Width(80));
                         if (newVal != parsed)
                         {
+                            if (!_changes.ContainsKey(key))
+                                _changes[key] = new ChangeRecord { Component = _selectedComponent, IsField = false, Member = setter, IsStatic = isStatic, Kind = FieldKind.Bool, OriginalValue = curVal ?? "false" };
                             if (ApplyBoolProperty(obj.Pointer, setter, isStatic, newVal))
+                            {
                                 _buffers[key] = newVal ? "true" : "false";
+                                MelonLogger.Msg($"[DebugTools] Set {typeName}.{propName} = {_buffers[key]} (was {curVal})");
+                            }
+                        }
+                        bool frozen = _frozen.ContainsKey(key);
+                        bool newFrozen = GUILayout.Toggle(frozen, "Freeze", GUILayout.Width(70));
+                        if (newFrozen != frozen)
+                        {
+                            if (newFrozen)
+                                _frozen[key] = new FreezeRecord { Component = _selectedComponent, IsField = false, Member = setter, IsStatic = isStatic, Kind = FieldKind.Bool, Value = _buffers[key] };
+                            else
+                                _frozen.Remove(key);
                         }
                     }
-                    
+
                     else if (kind == FieldKind.Int || kind == FieldKind.Float || kind == FieldKind.String)
                     {
                         string newBuf = GUILayout.TextField(buf, GUILayout.MinWidth(200));
@@ -491,7 +564,21 @@ public static class DebugTools
                             else if (kind == FieldKind.Float)  ok = ApplyFloatProperty(obj.Pointer, setter, isStatic, TryParseFloat(buf, curVal));
                             else if (kind == FieldKind.String) ok = ApplyStringProperty(obj.Pointer, setter, isStatic, buf ?? "");
                             if (ok)
+                            {
+                                if (!_changes.ContainsKey(key))
+                                    _changes[key] = new ChangeRecord { Component = _selectedComponent, IsField = false, Member = setter, IsStatic = isStatic, Kind = kind, OriginalValue = curVal ?? "" };
                                 _buffers[key] = SafeGetPropertyValueStringTyped(obj.Pointer, getter, isStatic, IL2CPP.il2cpp_method_get_return_type(getter)) ?? buf;
+                                MelonLogger.Msg($"[DebugTools] Set {typeName}.{propName} = {_buffers[key]} (was {curVal})");
+                            }
+                        }
+                        bool frozen = _frozen.ContainsKey(key);
+                        bool newFrozen = GUILayout.Toggle(frozen, "Freeze", GUILayout.Width(70));
+                        if (newFrozen != frozen)
+                        {
+                            if (newFrozen)
+                                _frozen[key] = new FreezeRecord { Component = _selectedComponent, IsField = false, Member = setter, IsStatic = isStatic, Kind = kind, Value = _buffers[key] };
+                            else
+                                _frozen.Remove(key);
                         }
                     }
                     else
@@ -514,6 +601,77 @@ public static class DebugTools
             _selectedGO = go;
             _selectedPath = BuildPath(go != null ? go.transform : null);
             _grabberPane = GrabberPane.ObjectActions;
+        }
+
+        private void RevertAllChanges()
+        {
+            foreach (var kv in _changes.ToArray())
+            {
+                var rec = kv.Value;
+                if (rec.Component == null) { _changes.Remove(kv.Key); continue; }
+                var obj = (Il2CppObjectBase)(object)rec.Component;
+                bool ok = false;
+                if (rec.Kind == FieldKind.Int)
+                {
+                    int v = TryParseInt(rec.OriginalValue, rec.OriginalValue);
+                    ok = rec.IsField ? ApplyIntField(obj.Pointer, rec.Member, rec.IsStatic, v)
+                                      : ApplyIntProperty(obj.Pointer, rec.Member, rec.IsStatic, v);
+                }
+                else if (rec.Kind == FieldKind.Float)
+                {
+                    float v = TryParseFloat(rec.OriginalValue, rec.OriginalValue);
+                    ok = rec.IsField ? ApplyFloatField(obj.Pointer, rec.Member, rec.IsStatic, v)
+                                      : ApplyFloatProperty(obj.Pointer, rec.Member, rec.IsStatic, v);
+                }
+                else if (rec.Kind == FieldKind.Bool)
+                {
+                    bool v = rec.OriginalValue.Equals("true", StringComparison.OrdinalIgnoreCase);
+                    ok = rec.IsField ? ApplyBoolField(obj.Pointer, rec.Member, rec.IsStatic, v)
+                                      : ApplyBoolProperty(obj.Pointer, rec.Member, rec.IsStatic, v);
+                }
+                else if (rec.Kind == FieldKind.String)
+                {
+                    ok = rec.IsField ? ApplyStringField(obj.Pointer, rec.Member, rec.IsStatic, rec.OriginalValue)
+                                      : ApplyStringProperty(obj.Pointer, rec.Member, rec.IsStatic, rec.OriginalValue);
+                }
+                if (ok)
+                    MelonLogger.Msg("[DebugTools] Reverted " + kv.Key);
+            }
+            _changes.Clear();
+            _frozen.Clear();
+        }
+
+        private void ApplyFrozenValues()
+        {
+            foreach (var kv in _frozen.ToArray())
+            {
+                var fr = kv.Value;
+                if (fr.Component == null) { _frozen.Remove(kv.Key); continue; }
+                var obj = (Il2CppObjectBase)(object)fr.Component;
+                if (fr.Kind == FieldKind.Int)
+                {
+                    int v = TryParseInt(fr.Value, fr.Value);
+                    if (fr.IsField) ApplyIntField(obj.Pointer, fr.Member, fr.IsStatic, v);
+                    else ApplyIntProperty(obj.Pointer, fr.Member, fr.IsStatic, v);
+                }
+                else if (fr.Kind == FieldKind.Float)
+                {
+                    float v = TryParseFloat(fr.Value, fr.Value);
+                    if (fr.IsField) ApplyFloatField(obj.Pointer, fr.Member, fr.IsStatic, v);
+                    else ApplyFloatProperty(obj.Pointer, fr.Member, fr.IsStatic, v);
+                }
+                else if (fr.Kind == FieldKind.Bool)
+                {
+                    bool v = fr.Value.Equals("true", StringComparison.OrdinalIgnoreCase);
+                    if (fr.IsField) ApplyBoolField(obj.Pointer, fr.Member, fr.IsStatic, v);
+                    else ApplyBoolProperty(obj.Pointer, fr.Member, fr.IsStatic, v);
+                }
+                else if (fr.Kind == FieldKind.String)
+                {
+                    if (fr.IsField) ApplyStringField(obj.Pointer, fr.Member, fr.IsStatic, fr.Value);
+                    else ApplyStringProperty(obj.Pointer, fr.Member, fr.IsStatic, fr.Value);
+                }
+            }
         }
 
         private void RefreshNearby()
