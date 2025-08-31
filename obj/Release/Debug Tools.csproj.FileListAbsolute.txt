@@ -1,0 +1,79 @@
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\Debug Tools.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\Debug Tools.pdb
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\0Harmony.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\Assembly-CSharp.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\Il2CppInterop.Runtime.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\Il2Cppmscorlib.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\MelonLoader.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\UnityEngine.CoreModule.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\UnityEngine.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\UnityEngine.IMGUIModule.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\UnityEngine.InputLegacyModule.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\UnityEngine.InputModule.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\UnityEngine.TextCoreFontEngineModule.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\UnityEngine.TextCoreTextEngineModule.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\UnityEngine.TextRenderingModule.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\UnityEngine.UI.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\UnityEngine.UIElementsModule.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\UnityEngine.UIModule.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\Mono.Cecil.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\UnityEngine.ParticleSystemModule.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\UnityEngine.PhysicsModule.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\UnityEngine.AnimationModule.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\UnityEngine.AudioModule.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\UnityEngine.TerrainModule.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\Il2CppSystem.Core.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\Unity.Postprocessing.Runtime.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\UnityEngine.VehiclesModule.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\Assembly-CSharp-firstpass.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\Il2CppSystem.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\UnityEngine.AssetBundleModule.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\Il2CppCinemachine.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\Il2CppRewired_Core.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\Unity.TextMeshPro.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\UnityEngine.ClothModule.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\Il2CppAura2_Core.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\Unity.ProBuilder.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\Il2Cppcom.rlabrecque.steamworks.net.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\Il2CppNewtonsoft.Json.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\UnityEngine.TerrainPhysicsModule.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\UnityEngine.WindModule.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\UnityEngine.VideoModule.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\UnityEngine.DirectorModule.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\UnityEngine.AIModule.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\UnityEngine.Physics2DModule.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\Unity.Timeline.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\Il2CppMystery Squiggle.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\UnityEngine.UnityWebRequestModule.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\MonoMod.Utils.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\MonoMod.RuntimeDetour.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\bHapticsLib.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\AssetRipper.Primitives.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\Tomlet.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\AssetsTools.NET.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\ValueTupleBridge.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\Mono.Cecil.Pdb.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\Mono.Cecil.Mdb.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\Mono.Cecil.Rocks.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\UnityEngine.JSONSerializeModule.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\Il2CppMono.Security.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\Il2CppSystem.Configuration.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\Il2CppSystem.Xml.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\Unity.InputSystem.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\Unity.ProBuilder.Poly2Tri.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\Il2CppSystem.Numerics.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\Il2CppSystem.Runtime.Serialization.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\Il2CppSystem.Data.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\Il2CppSystem.Xml.Linq.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\Il2CppMystery Node Set.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\WebSocketDotNet.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\UnityEngine.XRModule.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\Il2CppSystem.Transactions.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\UnityEngine.SubsystemsModule.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\MelonLoader.pdb
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\Release\MelonLoader.xml
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\obj\Release\Debug Tools.csproj.AssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\obj\Release\Debug Tools.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\obj\Release\Debug To.6D6DE16D.Up2Date
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\obj\Release\Debug Tools.dll
+C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\obj\Release\Debug Tools.pdb

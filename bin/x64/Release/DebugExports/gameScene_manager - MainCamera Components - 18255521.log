@@ -1,0 +1,224 @@
+--- Finder: Components on MainCamera (14) ---
+Comp: UnityEngine.Transform
+    Prop position = (3.80, 0.00, 0.00)
+    Prop localPosition = (3.80, 0.00, 0.00)
+    Prop eulerAngles = (3.80, 0.00, 0.00)
+    Prop localEulerAngles = (3.80, 0.00, 0.00)
+    Prop right = (3.80, 0.00, 0.00)
+    Prop up = (3.80, 0.00, 0.00)
+    Prop forward = (3.80, 0.00, 0.00)
+    Prop rotation = (5.65746, 0.00000, 0.00000, 0.00000)
+    Prop localRotation = (5.65746, 0.00000, 0.00000, 0.00000)
+    Prop localScale = (3.80, 0.00, 0.00)
+    Prop parent = SpectatorManager (UnityEngine.Transform)
+    Prop parentInternal = SpectatorManager (UnityEngine.Transform)
+    Prop worldToLocalMatrix = 6.07010	0.89513	0.00000	0.44580
+0.00000	-0.28483	0.76928	0.57191
+0.00000	-0.34295	-0.63891	0.68861
+0.00000	0.00000	0.00000	0.00000
+
+    Prop localToWorldMatrix = 6.07010	0.89513	-0.28483	-0.34295
+0.00000	0.00000	0.76928	-0.63891
+0.00000	0.44580	0.57191	0.68861
+0.00000	0.00000	0.00000	0.00000
+
+    Prop root = SpectatorManager (UnityEngine.Transform)
+    Prop childCount = 1076146384
+    Prop lossyScale = (3.80, 0.00, 0.00)
+    Prop hasChanged = True
+Comp: UnityEngine.Camera Enabled=True
+    Field kMinAperture = 2.789074
+    Field kMaxAperture = 2.789074
+    Field kMinBladeCount = 1076146384
+    Field kMaxBladeCount = 1076146384
+    Field onPreCull = null
+    Field onPreRender = UnityEngine.Camera+CameraCallback
+    Field onPostRender = null
+    Prop nearClipPlane = 2.789074
+    Prop farClipPlane = 2.789074
+    Prop fieldOfView = 2.789074
+    Prop actualRenderingPath = DeferredShading
+    Prop allowHDR = True
+    Prop allowMSAA = True
+    Prop allowDynamicResolution = True
+    Prop orthographicSize = 2.789074
+    Prop orthographic = True
+    Prop depth = 2.789074
+    Prop aspect = 2.789074
+    Prop cullingMask = 1076146384
+    Prop eventMask = 1076146384
+    Prop cameraType = Game
+    Prop layerCullDistances = System.Single[]
+    Prop useOcclusionCulling = True
+    Prop backgroundColor = RGBA(4.266, 0.000, 0.000, 0.000)
+    Prop clearFlags = Skybox
+    Prop depthTextureMode = Depth, DepthNormals, MotionVectors
+    Prop usePhysicalProperties = True
+    Prop focusDistance = 2.789074
+    Prop sensorSize = (3.82, 0.00)
+    Prop lensShift = (3.82, 0.00)
+    Prop gateFit = Horizontal
+    Prop rect = (x:3.80, y:0.00, width:0.00, height:0.00)
+    Prop pixelRect = (x:3.80, y:0.00, width:0.00, height:0.00)
+    Prop pixelWidth = 1076146384
+    Prop pixelHeight = 1076146384
+    Prop scaledPixelWidth = 1076146384
+    Prop scaledPixelHeight = 1076146384
+    Prop targetTexture = null
+    Prop targetDisplay = 1076146384
+    Prop cameraToWorldMatrix = 6.07010	0.89513	-0.28483	0.34295
+0.00000	0.00000	0.76928	0.63891
+0.00000	0.44580	0.57191	-0.68861
+0.00000	0.00000	0.00000	0.00000
+
+    Prop worldToCameraMatrix = 6.07010	0.89513	0.00000	0.44580
+0.00000	-0.28483	0.76928	0.57191
+0.00000	0.34295	0.63891	-0.68861
+0.00000	0.00000	0.00000	0.00000
+
+    Prop projectionMatrix = 6.07010	1.54546	0.00000	0.00000
+0.00000	0.00000	2.74748	0.00000
+0.00000	0.00000	0.00000	-1.00637
+0.00000	0.00000	0.00000	-1.00000
+
+    Prop nonJitteredProjectionMatrix = 6.07010	1.54546	0.00000	0.00000
+0.00000	0.00000	2.74748	0.00000
+0.00000	0.00000	0.00000	-1.00637
+0.00000	0.00000	0.00000	-1.00000
+
+    Prop main = MainCamera (UnityEngine.Camera)
+    Prop current = MainCamera (UnityEngine.Camera)
+    Prop stereoEnabled = True
+    Prop stereoTargetEye = Both
+    Prop stereoActiveEye = Mono
+    Prop allCamerasCount = 1076146384
+    Prop allCameras = UnityEngine.Camera[]
+Comp: SSAOPro
+    Field NoiseTexture = noise (UnityEngine.Texture2D)
+    Field UseHighPrecisionDepthMap = True
+    Field Samples = Low
+    Field Downsampling = 1076146384
+    Field Radius = 2.789074
+    Field Intensity = 2.789074
+    Field _renderManagerIntensityMultiplier = 2.789074
+    Field Distance = 2.789074
+    Field Bias = 2.789074
+    Field LumContribution = 2.789074
+    Field OcclusionColor = RGBA(4.266, 0.000, 0.000, 0.000)
+    Field Blur = None
+    Field BlurDownsampling = True
+    Field BlurPasses = 1076146384
+    Field BlurBilateralThreshold = 2.789074
+    Field DebugAO = True
+    Field m_ShaderSSAO = Hidden/SSAO Pro V2 (UnityEngine.Shader)
+    Field m_Material = Hidden/SSAO Pro V2 (UnityEngine.Material)
+    Field m_Camera = MainCamera (UnityEngine.Camera)
+    Prop Material = Hidden/SSAO Pro V2 (UnityEngine.Material)
+    Prop ShaderSSAO = Hidden/SSAO Pro V2 (UnityEngine.Shader)
+Comp: CameraViewportDebugRenderer
+Comp: UnityEngine.AudioSource
+    Prop volume = 2.789074
+    Prop pitch = 2.789074
+    Prop time = 2.789074
+    Prop timeSamples = 1076146384
+    Prop clip = null
+    Prop isPlaying = True
+    Prop loop = True
+    Prop playOnAwake = True
+    Prop spatialBlend = 2.789074
+    Prop minDistance = 2.789074
+    Prop maxDistance = 2.789074
+    Prop rolloffMode = Logarithmic
+Comp: SSRT
+    Field version = 1.0.0
+    Field rotationCount = 1076146384
+    Field stepCount = 1076146384
+    Field radius = 2.789074
+    Field expStart = 2.789074
+    Field expFactor = 2.789074
+    Field jitterSamples = True
+    Field GIBoost = 2.789074
+    Field lightBufferHDR = True
+    Field lightBufferResolution = Quarter
+    Field LnDlOffset = 2.789074
+    Field nDlOffset = 2.789074
+    Field power = 2.789074
+    Field thickness = 2.789074
+    Field falloff = 2.789074
+    Field multiBounceAO = True
+    Field directLightingAO = True
+    Field fallbackMethod = Off
+    Field cubemapFallback = null
+    Field resolutionDownscale = Full
+    Field reuseCount = 1076146384
+    Field temporalEnabled = True
+    Field temporalResponse = 2.789074
+    Field debugMode = Combined
+    Field lightOnly = True
+    Field _selectedCameraEvent = AfterForwardOpaque
+Comp: Aura2API.AuraCamera
+    Field frustumSettings = Aura2API.FrustumSettings
+    Field _frustum = Aura2API.Frustum
+    Prop CameraComponent = MainCamera (UnityEngine.Camera)
+    Prop CommonDataManager = Aura2API.CommonDataManager
+    Prop FrameId = 1076146384
+    Prop Time = 2.789074
+    Prop DeltaTtime = 2.789074
+    Prop IsInitialized = True
+    Prop HasRegisteredAuraCameras = True
+Comp: OnRenderBeams
+    Field _instance = MainCamera (OnRenderBeams)
+Comp: AssignSourceTextureForUIBlur
+Comp: UnityEngine.Rendering.PostProcessing.PostProcessLayer
+    Field volumeTrigger = null
+    Field volumeLayer = UnityEngine.LayerMask
+    Field stopNaNPropagation = True
+    Field finalBlitToCameraTarget = True
+    Field antialiasingMode = SuperResolution
+    Field temporalAntialiasing = UnityEngine.Rendering.PostProcessing.TemporalAntialiasing
+    Field superResolution = UnityEngine.Rendering.PostProcessing.SuperResolution
+    Field subpixelMorphologicalAntialiasing = UnityEngine.Rendering.PostProcessing.SubpixelMorphologicalAntialiasing
+    Field fastApproximateAntialiasing = UnityEngine.Rendering.PostProcessing.FastApproximateAntialiasing
+    Field fog = UnityEngine.Rendering.PostProcessing.Fog
+    Field debugLayer = UnityEngine.Rendering.PostProcessing.PostProcessDebugLayer
+    Field breakBeforeColorGrading = True
+    Prop sortedBundles = System.Collections.Generic.Dictionary`2[UnityEngine.Rendering.PostProcessing.PostProcessEvent,System.Collections.Generic.List`1[UnityEngine.Rendering.PostProcessing.PostProcessLayer+SerializedBundleRef]]
+    Prop cameraDepthFlags = Depth, MotionVectors
+    Prop haveBundlesBeenInited = True
+Comp: Bearroll.UltimateDecals.UD_Camera
+    Field stereoRenderingMode = SinglePass
+    Field normalSmoothing = 2.789074
+    Field forwardDepthNormals = Restored
+    Field debugMode = None
+    Prop camera = MainCamera (UnityEngine.Camera)
+    Prop activeCount = 1076146384
+    Prop decalRenderer = Bearroll.UltimateDecals.UD_DeferredRenderer
+    Prop currentCamera = null
+    Prop main = MainCamera (Bearroll.UltimateDecals.UD_Camera)
+    Prop initError = None
+    Prop manager = PhysicsAndRenderManagers (Bearroll.UltimateDecals.UD_Manager)
+    Prop isUsingMSAA = True
+    Prop isDeferred = True
+    Prop isStereo = True
+    Prop isForward = True
+Comp: Cinemachine.CinemachineBrain
+    Field m_ShowDebugText = True
+    Field m_ShowCameraFrustum = True
+    Field m_IgnoreTimeScale = True
+    Field m_WorldUpOverride = null
+    Field m_UpdateMethod = ManualUpdate
+    Field m_BlendUpdateMethod = LateUpdate
+    Field m_DefaultBlend = Cinemachine.CinemachineBlendDefinition
+    Field m_CustomBlends = null
+    Field m_CameraCutEvent = Cinemachine.CinemachineBrain+BrainEvent Cinemachine.CinemachineBrain+BrainEvent
+    Field m_CameraActivatedEvent = Cinemachine.CinemachineBrain+VcamActivatedEvent Cinemachine.CinemachineBrain+VcamActivatedEvent
+    Prop OutputCamera = MainCamera (UnityEngine.Camera)
+    Prop ControlledObject = MainCamera (UnityEngine.GameObject)
+    Prop SoloCamera = null
+    Prop DefaultWorldUp = (3.80, 0.00, 0.00)
+    Prop ActiveVirtualCamera = SpectatorManager (Cinemachine.CinemachineDynamicMixingCamera)
+    Prop IsBlending = True
+    Prop ActiveBlend = null
+    Prop CurrentCameraState = Cinemachine.CameraState
+Comp: ApplyCameraPostProcessLayerSettings
+Comp: UnityEngine.StreamingController

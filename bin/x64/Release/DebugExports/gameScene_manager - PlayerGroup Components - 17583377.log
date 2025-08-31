@@ -1,0 +1,54 @@
+--- Finder: Components on PlayerGroup (2) ---
+Comp: UnityEngine.Transform
+    Prop position = (-16316250000.00, 0.00, 0.00)
+    Prop localPosition = (-16316250000.00, 0.00, 0.00)
+    Prop eulerAngles = (-16316250000.00, 0.00, 0.00)
+    Prop localEulerAngles = (-16316250000.00, 0.00, 0.00)
+    Prop right = (-16316250000.00, 0.00, 0.00)
+    Prop up = (-16316250000.00, 0.00, 0.00)
+    Prop forward = (-16316250000.00, 0.00, 0.00)
+    Prop rotation = (-24298620000.00000, 0.00000, 0.00000, 0.00000)
+    Prop localRotation = (-24298620000.00000, 0.00000, 0.00000, 0.00000)
+    Prop localScale = (-16316250000.00, 0.00, 0.00)
+    Prop parent = null
+    Prop parentInternal = null
+    Prop worldToLocalMatrix = -26070880000.00000	1.00000	0.00000	0.00000
+0.00000	0.00000	1.00000	0.00000
+0.00000	0.00000	0.00000	1.00000
+0.00000	0.00000	0.00000	0.00000
+
+    Prop localToWorldMatrix = -26070880000.00000	1.00000	0.00000	0.00000
+0.00000	0.00000	1.00000	0.00000
+0.00000	0.00000	0.00000	1.00000
+0.00000	0.00000	0.00000	0.00000
+
+    Prop root = PlayerGroup (UnityEngine.Transform)
+    Prop childCount = -802901808
+    Prop lossyScale = (-16316250000.00, 0.00, 0.00)
+    Prop hasChanged = True
+Comp: PlayerManager
+    Field _playerPrefab = Player (UnityEngine.GameObject)
+    Field _defaultPlayerPoliceVehicleType = PoliceCruiser
+    Field _defaultPlayerPoliceVehicle = Vehicle_PoliceCruiser (UnityEngine.GameObject)
+    Field _defaultAppearance = PoliceUniform
+    Field _kickInDoorPickablePrefab = Empty Hands (Pickable)
+    Field _alwaysPatrollingOverride = True
+    Field k_allowAimingLockon = True
+    Field k_canTakeOffWornClothing = True
+    Field k_playerCanCarryMultipleWearables = True
+    Field _useFlashlightRangeFromEnemies = -1.197898E+10
+    Field _uiThoughtHeightOffset = -1.197898E+10
+    Field _uiPlayerThoughtHeightOffset = -1.197898E+10
+    Field _invincible = True
+    Field _autoHealthRestoreToMin = -1.197898E+10
+    Field _useCursors = True
+    Field _menuCursor = menu_cursor (UnityEngine.Texture2D)
+    Field _menuCursorHotspot = (-16415850000.00, 0.00)
+    Field _mapCursor = cursor_blank (UnityEngine.Texture2D)
+    Field _mapCursorHotspot = (-16415850000.00, 0.00)
+    Field _maxTokens = -802901808
+    Field _supportTokenRegenTime = -1.197898E+10
+    Field _debugUnlimitedSupportTokens = True
+    Field _velocityForPerformanceQueryTravellingFast = -1.197898E+10
+    Field _maxVehicleVelocityInObjectiveLocation = -1.197898E+10
+    Field _timeSinceLastShotVehicleToVehicle = -1.197898E+10
