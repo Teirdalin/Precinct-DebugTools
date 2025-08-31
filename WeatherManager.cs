@@ -10,7 +10,7 @@ public static class WeatherManager
     {
         try
         {
-            var manager = UnityEngine.Object.FindObjectOfType<TimeOfDayManager>();
+            var manager = GameObject.Find("TimeOfDayManager");
             if (manager == null)
             {
                 MelonLogger.Msg("[Weather] TimeOfDayManager not found.");
@@ -81,7 +81,7 @@ public static class WeatherManager
         }
     }
 
-    private static string SafeToString(IntPtr objPtr)
+    private static unsafe string SafeToString(IntPtr objPtr)
     {
         if (objPtr == IntPtr.Zero) return "null";
         try
