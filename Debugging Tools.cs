@@ -91,7 +91,7 @@ public static class DebugTools
         private bool _visible;
         private Rect _rect = new Rect(80, 80, 960, 720);
         private Vector2 _scroll;
-        private enum RootPane { Home, Grabber }
+        private enum RootPane { Home, Grabber, Weather }
         private RootPane _root = RootPane.Home;
         private enum GrabberPane { Menu, Cameras, ObjectSearch, Nearby, ObjectActions, ComponentList, ComponentEditor }
         private GrabberPane _grabberPane = GrabberPane.Menu;
@@ -226,9 +226,14 @@ public static class DebugTools
                     GUILayout.Label("Select a tool:");
                     GUILayout.Space(8);
                     if (GUILayout.Button("Grabber", GUILayout.Height(40))) { _grabberPane = GrabberPane.Menu; _root = RootPane.Grabber; }
+                    GUILayout.Space(6);
+                    if (GUILayout.Button("Weather Manager", GUILayout.Height(40))) _root = RootPane.Weather;
                     break;
                 case RootPane.Grabber:
                     DrawGrabber();
+                    break;
+                case RootPane.Weather:
+                    DrawWeatherManager();
                     break;
             }
 
@@ -594,6 +599,14 @@ public static class DebugTools
                 if (GUILayout.Button("‹ Back", GUILayout.Width(90))) _grabberPane = GrabberPane.ComponentList;
                 return;
             }
+        }
+
+        private void DrawWeatherManager()
+        {
+            GUILayout.Label("Weather Manager:");
+            GUILayout.Space(8);
+            if (GUILayout.Button("Print Weather Definitions", GUILayout.Height(32)))
+                WeatherManager.PrintWeatherDefs();
         }
 
         private void SelectObject(GameObject go)
