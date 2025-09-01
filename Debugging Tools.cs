@@ -1125,7 +1125,7 @@ public static class DebugTools
             return raw.Trim();
         }
 
-        private static string EnsureLogDir()
+        internal static string EnsureLogDir()
         {
             string[] candidates =
             {
