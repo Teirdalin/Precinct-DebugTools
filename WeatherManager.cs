@@ -3,6 +3,7 @@ using Il2CppInterop.Runtime;
 using Il2CppInterop.Runtime.InteropTypes;
 using MelonLoader;
 using UnityEngine;
+using System.Runtime.InteropServices;
 
 public static class WeatherManager
 {
@@ -26,7 +27,7 @@ public static class WeatherManager
                 return;
             }
 
-            IntPtr listPtr = IL2CPP.il2cpp_field_get_value_object(field, obj.Pointer);
+            IntPtr listPtr = Marshal.ReadIntPtr(obj.Pointer, IL2CPP.il2cpp_field_get_offset(field));
             if (listPtr == IntPtr.Zero)
             {
                 MelonLogger.Msg("[Weather] weatherDefList is null.");
