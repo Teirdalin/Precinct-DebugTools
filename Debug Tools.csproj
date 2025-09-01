@@ -45,6 +45,12 @@
     <WarningLevel>0</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+  <PackageReference
+    Include="Microsoft.NETFramework.ReferenceAssemblies.net472"
+    Version="1.0.3"
+    PrivateAssets="all" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="0Harmony">
       <HintPath>libs\net35\0Harmony.dll</HintPath>
     </Reference>
@@ -102,12 +108,4 @@
     <Compile Include="WeatherManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
-  </PropertyGroup>
-  <PropertyGroup>
-    <PostBuildEvent>copy /Y "C:\Users\Administrator\Documents\Visual Studio 2022\Projects\Debug Tools\bin\x64\Release\Debug Tools.dll" "F:\Games\The Precinct\Mods\Debug Tools.dll"
-start "" "F:\Games\The Precinct\Precinct.exe"</PostBuildEvent>
-  </PropertyGroup>
 </Project>
