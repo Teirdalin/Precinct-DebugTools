@@ -27,7 +27,7 @@ public static class WeatherManager
                 return;
             }
 
-            IntPtr listPtr = Marshal.ReadIntPtr(obj.Pointer, IL2CPP.il2cpp_field_get_offset(field));
+            IntPtr listPtr = Marshal.ReadIntPtr(obj.Pointer, (int)IL2CPP.il2cpp_field_get_offset(field));
             if (listPtr == IntPtr.Zero)
             {
                 MelonLogger.Msg("[Weather] weatherDefList is null.");
