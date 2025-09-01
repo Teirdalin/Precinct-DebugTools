@@ -1,9 +1,12 @@
 using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Runtime.InteropServices;
 using Il2CppInterop.Runtime;
 using Il2CppInterop.Runtime.InteropTypes;
 using MelonLoader;
 using UnityEngine;
-using System.Runtime.InteropServices;
 
 public static class WeatherManager
 {
@@ -74,6 +77,7 @@ public static class WeatherManager
                 return;
             }
 
+            var lines = new List<string>();
             int index = 0;
             while (true)
             {
@@ -88,7 +92,18 @@ public static class WeatherManager
                 if (exc != IntPtr.Zero) break;
 
                 string val = SafeToString(cur);
-                MelonLogger.Msg($"[WeatherDef {index++}] {val}");
+                string line = $"[WeatherDef {index++}] {val}";
+                MelonLogger.Msg(line);
+                lines.Add(line);
+            }
+
+            if (lines.Count > 0)
+            {
+                string dir = DebugTools.EnsureLogDir();
+                string fileName = $"WeatherDefs - {DateTime.Now.ToString(\"yyyyMMddHHmmss\", CultureInfo.InvariantCulture)}.log";
+                string path = Path.Combine(dir, fileName);
+                File.WriteAllLines(path, lines);
+                MelonLogger.Msg($"[Weather] Wrote -> {path}");
             }
         }
         catch (Exception e)
