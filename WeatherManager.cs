@@ -18,10 +18,25 @@ public static class WeatherManager
                 return;
             }
 
-            var obj = (Il2CppObjectBase)(object)manager;
-            IntPtr klass = IL2CPP.il2cpp_object_get_class(obj.Pointer);
-            IntPtr field = IL2CPP.il2cpp_class_get_field_from_name(klass, "_weatherDefList");
-            if (field == IntPtr.Zero)
+            // The weather definitions live on the TimeOfDayManager component rather than
+            // on the GameObject itself. Scan all components attached to the GameObject
+            // and locate the field on whichever component defines it.
+            var components = manager.GetComponents<Component>();
+            Il2CppObjectBase obj = null;
+            IntPtr field = IntPtr.Zero;
+            foreach (var comp in components)
+            {
+                var candidate = (Il2CppObjectBase)(object)comp;
+                IntPtr k = IL2CPP.il2cpp_object_get_class(candidate.Pointer);
+                IntPtr f = IL2CPP.il2cpp_class_get_field_from_name(k, "_weatherDefList");
+                if (f != IntPtr.Zero)
+                {
+                    obj = candidate;
+                    field = f;
+                    break;
+                }
+            }
+            if (field == IntPtr.Zero || obj == null)
             {
                 MelonLogger.Msg("[Weather] _weatherDefList field not found.");
                 return;
