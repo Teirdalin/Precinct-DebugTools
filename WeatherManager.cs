@@ -7,6 +7,7 @@ using Il2CppInterop.Runtime;
 using Il2CppInterop.Runtime.InteropTypes;
 using MelonLoader;
 using UnityEngine;
+using System.Runtime.InteropServices;
 
 public static class WeatherManager
 {
